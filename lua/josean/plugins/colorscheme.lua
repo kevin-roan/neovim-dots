@@ -1,12 +1,31 @@
 return {
+  -- {
+  --   "bluz71/vim-nightfly-guicolors",
+  --   priority = 1000, -- make sure to load this before all the other start plugins
+  --   config = function()
+  --     -- load the colorscheme here
+  --     vim.cmd([[colorscheme nightfly]])
+  --   end,
+  -- },
+  --
   {
-    "bluz71/vim-nightfly-guicolors",
-    priority = 1000, -- make sure to load this before all the other start plugins
+    "overcache/NeoSolarized",
+    { "tjdevries/colorbuddy.nvim" },
+  },
+  {
+    "svrana/neosolarized.nvim",
+    requires = { "tjdevries/colorbuddy.nvim" },
     config = function()
-      -- load the colorscheme here
-      vim.cmd([[colorscheme nightfly]])
+      -- Add your configuration for svrana/neosolarized.nvim here
+      local neosolarized = require("neosolarized")
+
+      -- Example: Set comment_italics to true
+      neosolarized.setup({
+        comment_italics = true,
+      })
     end,
   },
+  ---
   --
   -- {
   --   "navarasu/onedark.nvim",
